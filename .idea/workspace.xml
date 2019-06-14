@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="699843b4-acd9-4314-8252-372cc46e5ccb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/pullTest/PullTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="699843b4-acd9-4314-8252-372cc46e5ccb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560505492560" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560509908284" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../my_branch" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -245,7 +240,7 @@
       <workItem from="1560475309990" duration="2190000" />
       <workItem from="1560482806280" duration="7966000" />
       <workItem from="1560501450572" duration="1085000" />
-      <workItem from="1560504455885" duration="1058000" />
+      <workItem from="1560504455885" duration="1670000" />
     </task>
     <task id="LOCAL-00001" summary="第一次idea提交">
       <created>1560479654393</created>
@@ -272,7 +267,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12299000" />
+    <option name="totallyTimeSpent" value="12911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
