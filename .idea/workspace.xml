@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="699843b4-acd9-4314-8252-372cc46e5ccb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/pullTest/PullTest5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Git和Github" beforeDir="false" afterPath="$PROJECT_DIR$/Git和Github" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Git和Github">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+            <state relative-caret-position="523">
+              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
         </entry>
@@ -49,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/pullTest/PullTest5.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -119,11 +120,11 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore.gitignore" />
         <option value="$PROJECT_DIR$/src/com/company/pullTest/PullTest1.java" />
-        <option value="$PROJECT_DIR$/Git和Github" />
         <option value="$PROJECT_DIR$/src/com/company/pullTest/PullTest2.java" />
         <option value="$PROJECT_DIR$/src/com/company/pullTest/PullTest3.java" />
         <option value="$PROJECT_DIR$/src/com/company/pullTest/PullTest4.java" />
         <option value="$PROJECT_DIR$/src/com/company/pullTest/PullTest5.java" />
+        <option value="$PROJECT_DIR$/Git和Github" />
       </list>
     </option>
   </component>
@@ -175,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560514625420" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560515564727" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../my_branch" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -323,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14048000" />
+    <option name="totallyTimeSpent" value="14471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -437,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Git和Github">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/pullTest/PullTest2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -469,6 +463,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Git和Github">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>

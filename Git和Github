@@ -28,16 +28,16 @@
 	3、查看状态：git status
 	4、遇到红色的新建或修改文件  modified:   .idea/workspace.xml    git add .idea/workspace.xml
 	       或者使用 git add .   全部添加
-	5、再查看分支：git branch  新建或修改文件变绿
+	5、再查看分支状态：git status  新建或修改文件变绿
     6、提交本地： git commit -m "第四次分支合并"
+
 	7、切换到master： git checkout master
-	8、分支合并：git merge <分支name>
+	8、全部添加： git add .
+	9、提交本地： git commit -m "第四次分支合并"
 
+	10、分支合并：git merge <分支name>
 
-
-
-
-
+	11、提交到master远程仓库： git push  #
 
 
 三、github上已经有master分支 和dev分支
