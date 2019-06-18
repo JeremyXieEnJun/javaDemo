@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  private static final long serialVersionUID = 4601029764222607869L;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 1. 设置编码格式
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
