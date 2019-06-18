@@ -11,7 +11,7 @@ import java.io.PrintWriter;
  * @author Jeremy
  * @create 2019/6/18-9:18
  */
-public class HelloTomcat extends HttpServlet {
+public class HelloTomcat  extends HttpServlet {
     private static final long serialVersionUID = 4601029764222607869L;
 
     @Override
