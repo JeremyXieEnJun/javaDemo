@@ -33,7 +33,7 @@ public class HttpClientTest {
     /**
      * 测试发送GET请求
      */
-    public void get() {
+    public void get()  {
         // 1. 创建一个默认的client实例
         CloseableHttpClient client = HttpClients.createDefault();
 
