@@ -8,27 +8,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="237d0697-6748-4b59-8af6-1533f8fd4ad4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/javaDemo05_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpasyncclient_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_nio_4_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaDemo02_war_exploded/WEB-INF/classes/com/servlet/HelloTomcat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaDemo02_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaDemo02_war_exploded/index.jsp" beforeDir="false" />
-    </list>
+    <list default="true" id="237d0697-6748-4b59-8af6-1533f8fd4ad4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/javaDemo04/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,7 +134,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="javaDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDemo03" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDemo03" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDemo03" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDemo05" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDemo05" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -168,7 +178,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560936230336" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560936567505" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/javaDemo05/web/WEB-INF/lib/mysql-connector-java-8.0.15.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -661,7 +671,7 @@
       <workItem from="1560501450572" duration="1085000" />
       <workItem from="1560504455885" duration="1670000" />
       <workItem from="1560830145256" duration="13610000" />
-      <workItem from="1560906724572" duration="18836000" />
+      <workItem from="1560906724572" duration="19073000" />
     </task>
     <task id="LOCAL-00001" summary="第一次idea提交">
       <created>1560479654393</created>
@@ -726,7 +736,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560936176322</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="6月19日测试项目更新">
+      <created>1560936294305</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1560936294305</updated>
+    </task>
+    <task id="LOCAL-00011" summary="6月19日javaDemo05新建test文件">
+      <created>1560936444547</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560936444547</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -735,7 +759,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49060000" />
+    <option name="totallyTimeSpent" value="49297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -820,7 +844,9 @@
     <MESSAGE value="javaDemo02测试Tomcat" />
     <MESSAGE value="javaDemo03 结合Tomcat Web 工程 测试Http库" />
     <MESSAGE value="删除了测试项目javaDemo02" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除了测试项目javaDemo02" />
+    <MESSAGE value="6月19日测试项目更新" />
+    <MESSAGE value="6月19日javaDemo05新建test文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="6月19日javaDemo05新建test文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../my_branch/javaDemo/javaDemo2.iml" />
@@ -1164,20 +1190,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaDemo05/src/HttpClientTest1.java">
+    <entry file="file://$PROJECT_DIR$/javaDemo05/src/test/HttpClientTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+        <state relative-caret-position="187">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javaDemo05/src/HttpClientTest2.java">
+    <entry file="file://$PROJECT_DIR$/javaDemo05/src/test/HttpClientTest1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="187">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
