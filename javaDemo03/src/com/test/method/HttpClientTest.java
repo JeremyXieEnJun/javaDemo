@@ -47,7 +47,7 @@ public class HttpClientTest {
 
             try {
                 // 4. 获取响应体
-                HttpEntity entity = resp.getEntity();
+                HttpEntity entity  = resp.getEntity();
                 System.out.println("------");
 
                 // 5. 打印响应状态

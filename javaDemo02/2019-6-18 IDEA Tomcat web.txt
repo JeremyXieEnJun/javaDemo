@@ -1,5 +1,0 @@
-IDEA上面布置一个Tomcat web工程：
-参考：https://jingyan.baidu.com/album/0a52e3f43d9f69bf62ed72f9.html?picindex=3
-      https://www.bilibili.com/video/av47209853/?p=2
-	  https://www.cnblogs.com/jxldjsn/p/8203859.html
-	注意：Artifacts,和Facets的设置
