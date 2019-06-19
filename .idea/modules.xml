@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/javaDemo01/javaDemo01.iml" filepath="$PROJECT_DIR$/javaDemo01/javaDemo01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/javaDemo02/javaDemo02.iml" filepath="$PROJECT_DIR$/javaDemo02/javaDemo02.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaDemo03/javaDemo03.iml" filepath="$PROJECT_DIR$/javaDemo03/javaDemo03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaDemo04/javaDemo04.iml" filepath="$PROJECT_DIR$/javaDemo04/javaDemo04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaDemo05/javaDemo05.iml" filepath="$PROJECT_DIR$/javaDemo05/javaDemo05.iml" />
     </modules>
   </component>
 </project>
