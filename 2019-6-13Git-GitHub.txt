@@ -40,6 +40,13 @@
 	11、提交到master远程仓库： git push  #
 
 
+
+
+
+
+
+
+
 三、github上已经有master分支 和dev分支
 	  在本地
 	git checkout -b dev 新建并切换到本地dev分支
