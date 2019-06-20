@@ -37,7 +37,8 @@ public class HttpClientTest2 {
         List<NameValuePair> paramerts = new ArrayList<>();
             paramerts.add(new BasicNameValuePair("uname","Jeremy"));
             paramerts.add(new BasicNameValuePair("pwd","123"));
-        HttpEntity requestEntity = new UrlEncodedFormEntity(paramerts);
+        // 将参数设置到entity对象中
+        HttpEntity requestEntity = new UrlEncodedFormEntity(paramerts,"UTF-8");
         post.setEntity(requestEntity);
 
         // 3、准备一个发包客户端，创建一个默认的HttpClient
