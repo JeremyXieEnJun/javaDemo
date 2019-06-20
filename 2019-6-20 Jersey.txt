@@ -1,0 +1,43 @@
+Jersey Client api 基本使用
+1.必须通过ClientBuilder工厂初始化Client实例；
+	Client client = ClientBuilder.newClient();
+	
+	当您只有一个配置要传递进来时，newClient只是一个绕过构建器的快捷方式。如果两者都需要设置，可以使用newBuilder方法，例如:
+	Client client = ClientBuilder.newBuilder()
+        .withConfig(config)
+        .sslContext(sslContext)
+        // Whatever else you set up
+        .build()
+
+2.创建目标，该目标构造参数可以是String ,URI,Link 形式的连接，这里用字符串。
+    WebTarget baseTarget= client.target("http://www.baidu.com/");
+
+3.1 get请求；如果2是根路径，可以同path方法添加下级连接。需要queryString参数可以通过queryParam实现
+    WebTarget subTarget=baseTarget.path("s").queryParam("ie", "utf-8").
+				queryParam("wd", "jersey");
+				
+3.2 post 请求；通过Invocation.Builder.post(Enity.entity());传递form表单；form表单通过javax.ws.rs.core.Form类型创建实例
+	    Form form=new Form();
+		form.param("ie","utf-8");
+		form.param("wd","jersey");		
+		Response response=builder.post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA_TYPE));
+
+4.接受response返回类型。这里如果需要特别指明可以通过WebTarget.request方法定义media返回类型。
+  Jersey提供javax.ws.rs.core.MediaType类选择。
+    Invocation.Builder builder=subTarget.request(MediaType.APPLICATION_JSON_TYPE).header("someHead", "true");
+
+5. 设置请求参数，例如头，cookie等
+	Invocation.Builder builder=subTarget.request().header("someHead", "true");
+
+6.发送请求，并且接受返回。这里是堵塞请求，必须等返回response，并操作返回值
+    Response response=builder.get();
+		System.out.println("request url="+subTarget.getUri().toString());
+		if(response.getStatus()==200){
+			System.out.println("status="+response.getStatus()+", statusInfo="+response.getStatusInfo());
+			//System.out.println(response.readEntity(String.class));
+			
+		}
+
+7. response 连接关闭。如果获取response对象并且读取entity数据，Jersey会自动关闭连接，这个时候再操作response entity数据则会跑出
+异常：?Entity input stream has already been closed；如果将entity读入流中（InputStream）并不读取；或者不对response操作 
+那么需要手动关闭连接；
