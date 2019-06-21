@@ -1,43 +1,43 @@
-Jersey Client api »ù±¾Ê¹ÓÃ
-1.±ØĞëÍ¨¹ıClientBuilder¹¤³§³õÊ¼»¯ClientÊµÀı£»
+Jersey Client api åŸºæœ¬ä½¿ç”¨
+1.å¿…é¡»é€šè¿‡ClientBuilderå·¥å‚åˆå§‹åŒ–Clientå®ä¾‹ï¼›
 	Client client = ClientBuilder.newClient();
-	
-	µ±ÄúÖ»ÓĞÒ»¸öÅäÖÃÒª´«µİ½øÀ´Ê±£¬newClientÖ»ÊÇÒ»¸öÈÆ¹ı¹¹½¨Æ÷µÄ¿ì½İ·½Ê½¡£Èç¹ûÁ½Õß¶¼ĞèÒªÉèÖÃ£¬¿ÉÒÔÊ¹ÓÃnewBuilder·½·¨£¬ÀıÈç:
+
+	å½“æ‚¨åªæœ‰ä¸€ä¸ªé…ç½®è¦ä¼ é€’è¿›æ¥æ—¶ï¼ŒnewClientåªæ˜¯ä¸€ä¸ªç»•è¿‡æ„å»ºå™¨çš„å¿«æ·æ–¹å¼ã€‚å¦‚æœä¸¤è€…éƒ½éœ€è¦è®¾ç½®ï¼Œå¯ä»¥ä½¿ç”¨newBuilderæ–¹æ³•ï¼Œä¾‹å¦‚:
 	Client client = ClientBuilder.newBuilder()
         .withConfig(config)
         .sslContext(sslContext)
         // Whatever else you set up
         .build()
 
-2.´´½¨Ä¿±ê£¬¸ÃÄ¿±ê¹¹Ôì²ÎÊı¿ÉÒÔÊÇString ,URI,Link ĞÎÊ½µÄÁ¬½Ó£¬ÕâÀïÓÃ×Ö·û´®¡£
+2.åˆ›å»ºç›®æ ‡ï¼Œè¯¥ç›®æ ‡æ„é€ å‚æ•°å¯ä»¥æ˜¯String ,URI,Link å½¢å¼çš„è¿æ¥ï¼Œè¿™é‡Œç”¨å­—ç¬¦ä¸²ã€‚
     WebTarget baseTarget= client.target("http://www.baidu.com/");
 
-3.1 getÇëÇó£»Èç¹û2ÊÇ¸ùÂ·¾¶£¬¿ÉÒÔÍ¬path·½·¨Ìí¼ÓÏÂ¼¶Á¬½Ó¡£ĞèÒªqueryString²ÎÊı¿ÉÒÔÍ¨¹ıqueryParamÊµÏÖ
+3.1 getè¯·æ±‚ï¼›å¦‚æœ2æ˜¯æ ¹è·¯å¾„ï¼Œå¯ä»¥åŒpathæ–¹æ³•æ·»åŠ ä¸‹çº§è¿æ¥ã€‚éœ€è¦queryStringå‚æ•°å¯ä»¥é€šè¿‡queryParamå®ç°
     WebTarget subTarget=baseTarget.path("s").queryParam("ie", "utf-8").
 				queryParam("wd", "jersey");
-				
-3.2 post ÇëÇó£»Í¨¹ıInvocation.Builder.post(Enity.entity());´«µİform±íµ¥£»form±íµ¥Í¨¹ıjavax.ws.rs.core.FormÀàĞÍ´´½¨ÊµÀı
+
+3.2 post è¯·æ±‚ï¼›é€šè¿‡Invocation.Builder.post(Enity.entity());ä¼ é€’formè¡¨å•ï¼›formè¡¨å•é€šè¿‡javax.ws.rs.core.Formç±»å‹åˆ›å»ºå®ä¾‹
 	    Form form=new Form();
 		form.param("ie","utf-8");
-		form.param("wd","jersey");		
+		form.param("wd","jersey");
 		Response response=builder.post(Entity.entity(form, MediaType.MULTIPART_FORM_DATA_TYPE));
 
-4.½ÓÊÜresponse·µ»ØÀàĞÍ¡£ÕâÀïÈç¹ûĞèÒªÌØ±ğÖ¸Ã÷¿ÉÒÔÍ¨¹ıWebTarget.request·½·¨¶¨Òåmedia·µ»ØÀàĞÍ¡£
-  JerseyÌá¹©javax.ws.rs.core.MediaTypeÀàÑ¡Ôñ¡£
+4.æ¥å—responseè¿”å›ç±»å‹ã€‚è¿™é‡Œå¦‚æœéœ€è¦ç‰¹åˆ«æŒ‡æ˜å¯ä»¥é€šè¿‡WebTarget.requestæ–¹æ³•å®šä¹‰mediaè¿”å›ç±»å‹ã€‚
+  Jerseyæä¾›javax.ws.rs.core.MediaTypeç±»é€‰æ‹©ã€‚
     Invocation.Builder builder=subTarget.request(MediaType.APPLICATION_JSON_TYPE).header("someHead", "true");
 
-5. ÉèÖÃÇëÇó²ÎÊı£¬ÀıÈçÍ·£¬cookieµÈ
+5. è®¾ç½®è¯·æ±‚å‚æ•°ï¼Œä¾‹å¦‚å¤´ï¼Œcookieç­‰
 	Invocation.Builder builder=subTarget.request().header("someHead", "true");
 
-6.·¢ËÍÇëÇó£¬²¢ÇÒ½ÓÊÜ·µ»Ø¡£ÕâÀïÊÇ¶ÂÈûÇëÇó£¬±ØĞëµÈ·µ»Øresponse£¬²¢²Ù×÷·µ»ØÖµ
+6.å‘é€è¯·æ±‚ï¼Œå¹¶ä¸”æ¥å—è¿”å›ã€‚è¿™é‡Œæ˜¯å µå¡è¯·æ±‚ï¼Œå¿…é¡»ç­‰è¿”å›responseï¼Œå¹¶æ“ä½œè¿”å›å€¼
     Response response=builder.get();
 		System.out.println("request url="+subTarget.getUri().toString());
 		if(response.getStatus()==200){
 			System.out.println("status="+response.getStatus()+", statusInfo="+response.getStatusInfo());
 			//System.out.println(response.readEntity(String.class));
-			
+
 		}
 
-7. response Á¬½Ó¹Ø±Õ¡£Èç¹û»ñÈ¡response¶ÔÏó²¢ÇÒ¶ÁÈ¡entityÊı¾İ£¬Jersey»á×Ô¶¯¹Ø±ÕÁ¬½Ó£¬Õâ¸öÊ±ºòÔÙ²Ù×÷response entityÊı¾İÔò»áÅÜ³ö
-Òì³££º?Entity input stream has already been closed£»Èç¹û½«entity¶ÁÈëÁ÷ÖĞ£¨InputStream£©²¢²»¶ÁÈ¡£»»òÕß²»¶Ôresponse²Ù×÷ 
-ÄÇÃ´ĞèÒªÊÖ¶¯¹Ø±ÕÁ¬½Ó£»
+7. response è¿æ¥å…³é—­ã€‚å¦‚æœè·å–responseå¯¹è±¡å¹¶ä¸”è¯»å–entityæ•°æ®ï¼ŒJerseyä¼šè‡ªåŠ¨å…³é—­è¿æ¥ï¼Œè¿™ä¸ªæ—¶å€™å†æ“ä½œresponse entityæ•°æ®åˆ™ä¼šè·‘å‡º
+å¼‚å¸¸ï¼š?Entity input stream has already been closedï¼›å¦‚æœå°†entityè¯»å…¥æµä¸­ï¼ˆInputStreamï¼‰å¹¶ä¸è¯»å–ï¼›æˆ–è€…ä¸å¯¹responseæ“ä½œ
+é‚£ä¹ˆéœ€è¦æ‰‹åŠ¨å…³é—­è¿æ¥ï¼›
