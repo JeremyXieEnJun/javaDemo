@@ -4,6 +4,7 @@ import cn.itcast.domain.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.util.*;
 
