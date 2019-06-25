@@ -1,0 +1,86 @@
+
+
+基于一个json字符串输入和一个模板文件
+
+设计一个处理程序，该程序能将输入的json字符串中的信息提取出来，并基于模板文件，生成一个新的文件，这个新的文件内容是模板文件与json字符串中的关键信息的综合。
+
+例如：
+json字符串内容如下：
+
+{
+  "zoneName": "卫生间10",
+  "triggers": {
+        "inzonesensor_ON": ["a1","a13","a14"],
+        "inzonesensor_OFF": ["b11","b14","b15"],
+        "inzonesensor_ONOFF": ["c12","c113","c14"],
+        "outzonesensor_ON": ["d1"],
+        "outzonesensor_OFF": ["e2"]
+  },
+  "actions": {
+    "leaveDevice": [],
+    "occupancyDevice": ["testsensor1","testsensor2"]
+  },
+  "timers": {
+    "occupTimeoutMinutes": 10,
+    "leaveTimeoutMinutes": 30
+  }
+}
+
+模板文件的内容为：
+
+how are you
+
+var hello = world
+
+var variable1 = "occupTimeoutMinutes"  // 	"occupTimeoutMinutes"  替换为 10
+var variable1 = "leaveTimeoutMinutes"  // 	"leaveTimeoutMinutes"  替换为 30
+
+when 
+	"inzonesensor"       //将inzonesensor_ON的内容转换为： Item a1 changed from OFF to ON
+	                     //将inzonesensor_OFF的内容转换为： Item b11 changed from ON to OFF
+	                     //将inzonesensor_ONOFF的内容转换为两行： Item c12 changed from ON to OFF
+	                     									  Item c12 changed from OFF to ON
+
+	                     // "inzonesensor" 替换后的内容完整示例如下：
+	                     							Item a1  changed from OFF to ON or
+	                     							Item a13 changed from OFF to ON or	  
+	                     							Item a14 changed from OFF to ON or
+	                     							Item b11 changed from ON to OFF or
+	                     							Item b14 changed from ON to OFF or
+	                     							Item b15 changed from ON to OFF or
+	                     							Item c12 changed from OFF to ON or
+	                     							Item c12 changed from ON to OFF or
+	                     							Item c113 changed from OFF to ON or
+	                     							Item c113 changed from ON to OFF or
+	                     							Item c14 changed from OFF to ON or
+	                     							Item c14 changed from ON to OFF       //最后一行没有 or	                     							
+
+then
+	do some thing “zoneName” //替换为 卫生间10
+
+	"leaveDevice"   //替换的完整示例如下： 因为json字符串中的value为空，替换规则是删除，若json字符串中没有找到leaveDevice 这个key，同样按value为空处理。
+
+
+	do other thing
+
+end
+
+
+when 
+	"outzonesensor"  //与"inzonesensor"的替换规则类似。
+then
+	do some thing
+
+	"occupancyDevice"  //替换的完整示例如下：  注意，替换规则中无 or 连接字符串
+					   testsensor1.sendcommand(ON)			
+					   testsensor2.sendcommand(ON)	
+
+	do other thing “zoneName” //替换为 卫生间10
+end
+
+
+
+
+可选择不同的模板文件。
+可记录或缓存输入的json字符串，设计一个接口读取到该json字符串内容
+

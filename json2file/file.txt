@@ -1,0 +1,29 @@
+how are you
+
+var hello = world
+
+var variable1 = "occupTimeoutMinutes"
+var variable1 = "leaveTimeoutMinutes"
+when
+	"inzonesensor"
+
+then
+	do some thing “zoneName”
+
+	"leaveDevice"
+
+
+	do other thing
+
+end
+
+
+when
+	"outzonesensor"
+then
+	do some thing
+
+	"occupancyDevice"
+
+	do other thing “zoneName”
+end
