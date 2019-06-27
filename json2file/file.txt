@@ -1,0 +1,65 @@
+var Timer occupancyTimer = null
+val int occupTimeoutMinutes = 10 // The interval time between two detection
+
+var Timer leaveTimer = null
+val int leaveTimeoutMinutes = 30 // Total amount of time it takes to leave
+
+rule "normal_at_卫生间10"
+when
+    Item a1 changed from OFF to ON or
+	Item a13 changed from OFF to ON or
+	Item a14 changed from OFF to ON or
+	Item b11 changed from ON to OFF or
+	Item b14 changed from ON to OFF or
+	Item b15 changed from ON to OFF or
+	Item c12 changed from OFF to ON or
+	Item c12 changed from ON to OFF or
+	Item c113 changed from OFF to ON or
+	Item c113 changed from ON to OFF or
+	Item c14 changed from OFF to ON or
+	Item c14 changed from ON to OFF 
+then
+    if(occupancyTimer === null) {
+        occupancyTimer = createTimer(now.plusMinutes(occupTimeoutMinutes ), [|
+        occupancyTimer = null
+		logInfo("zoneLeaveDetect", "zone 卫生间10 occupancyTimer TIMEOUT!!!")
+		sendNotification("liuyantao@fanmiot.cn" , "卫生间10发生超长静止事件 - " + occupTimeoutMinutes + "分钟, zoneOccupancyDetect")
+		testsensor1.sendcommand(ON)
+		testsensor2.sendcommand(ON)
+        ])
+    }
+    else {
+        occupancyTimer.reschedule(now.plusMinutes(occupTimeoutMinutes ))
+    }
+
+	if(leaveTimer === null) {
+		leaveTimer = createTimer(now.plusMinutes(leaveTimeoutMinutes ), [|
+        leaveTimer = null
+		logInfo("zoneLeaveDetect", "zone 卫生间10 leaveTimer TIMEOUT!!!")
+		sendNotification("liuyantao@fanmiot.cn" , "卫生间10发生长时间滞留事件 - " + leaveTimeoutMinutes + "分钟, zoneLeaveDetect")
+		
+        ])
+	}
+end
+
+rule "normal_enterOrleave_卫生间10"
+when
+    Item d1 changed from OFF to ON or
+	Item e2 changed from ON to OFF or
+	Item f2 changed from OFF to ON or
+	Item f2 changed from ON to OFF or
+	Item f22 changed from OFF to ON or
+	Item f22 changed from ON to OFF 
+then
+	if(occupancyTimer !== null) {
+		occupancyTimer.cancel
+		occupancyTimer = null
+		logInfo("zoneLeaveDetect", "zone 卫生间10 occupancyTimer CANCELLED BY CHANGE")
+	}
+
+	if(leaveTimer !== null) {
+		leaveTimer.cancel
+        leaveTimer = null
+		logInfo("zoneLeaveDetect", "zone 卫生间10 leaveTimer CANCELLED BY CHANGE")
+	}
+end
