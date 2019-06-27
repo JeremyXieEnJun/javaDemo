@@ -2,9 +2,6 @@ package itcast.test;
 
 import itcast.domain.FileAction;
 import itcast.domain.JsonToChange;
-
-import java.io.*;
-
 /**
  * @author Jeremy
  * @create 2019/6/22-15:11
@@ -15,22 +12,23 @@ import java.io.*;
 
 public class JsonReToFile {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
-        //读出文件的内容到字符串
-        String url ="E:/javaDemo/json2file/file.txt";
+        //模板文件
+        String modelUrl ="E:/javaDemo/json2file/zonePresenceDetect.template";
         FileAction fileAction = new FileAction();
-        String content = fileAction.fileOut(url);
+        String content = fileAction.fileOut(modelUrl);
 
         //Json数据
         String json = "{\n" +
                 "  \"zoneName\": \"卫生间10\",\n" +
                 "  \"triggers\": {\n" +
-                "        \"inzonesensor_ON\": [\"a1\",\"a13\",\"a14\"],\n" +
+                "        \"inzonesensor_ON\": [\"a1\",\"a13\",\"a14\"],\n"+
                 "        \"inzonesensor_OFF\": [\"b11\",\"b14\",\"b15\"],\n" +
                 "        \"inzonesensor_ONOFF\": [\"c12\",\"c113\",\"c14\"],\n" +
                 "        \"outzonesensor_ON\": [\"d1\"],\n" +
-                "        \"outzonesensor_OFF\": [\"e2\"]\n" +
+                "        \"outzonesensor_OFF\": [\"e2\"],\n" +
+                "        \"outzonesensor_ONOFF\": [\"f2\",\"f22\"]\n" +
                 "  },\n" +
                 "  \"actions\": {\n" +
                 "    \"leaveDevice\": [],\n" +
@@ -49,9 +47,9 @@ public class JsonReToFile {
 
 
             //重新将字符串写入文件
+            //基于Json数据和；模板所生成的综合文件
+            String url ="E:/javaDemo/json2file/file.txt";
             fileAction = new FileAction();
             fileAction.fileIn(con,url);
-
-
     }
 }

@@ -10,11 +10,10 @@ import java.io.*;
  */
 public class FileAction {
 
+        //读出模板文件的内容到字符串
+     public String fileOut(String modelUrl) {
 
-        //读出文件的内容到字符串
-     public String fileOut(String url) {
-
-         File file = new File(url);
+         File file = new File(modelUrl);
          FileInputStream fis = null; //创建文件输入流
          try {
              fis = new FileInputStream(file);

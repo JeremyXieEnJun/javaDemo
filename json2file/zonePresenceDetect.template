@@ -1,0 +1,48 @@
+var Timer occupancyTimer = null
+val int occupTimeoutMinutes = 【occupTimeoutMinutes】 // The interval time between two detection
+
+var Timer leaveTimer = null
+val int leaveTimeoutMinutes = 【leaveTimeoutMinutes】 // Total amount of time it takes to leave
+
+rule "normal_at_【zoneName】"
+when
+    【inzonesensor】
+then
+    if(occupancyTimer === null) {
+        occupancyTimer = createTimer(now.plusMinutes(occupTimeoutMinutes ), [|
+        occupancyTimer = null
+		logInfo("zoneLeaveDetect", "zone 【zoneName】 occupancyTimer TIMEOUT!!!")
+		sendNotification("liuyantao@fanmiot.cn" , "【zoneName】发生超长静止事件 - " + occupTimeoutMinutes + "分钟, zoneOccupancyDetect")
+		【occupancyDevice】.sendCommand(ON)
+        ])
+    }
+    else {
+        occupancyTimer.reschedule(now.plusMinutes(occupTimeoutMinutes ))
+    }
+
+	if(leaveTimer === null) {
+		leaveTimer = createTimer(now.plusMinutes(leaveTimeoutMinutes ), [|
+        leaveTimer = null
+		logInfo("zoneLeaveDetect", "zone 【zoneName】 leaveTimer TIMEOUT!!!")
+		sendNotification("liuyantao@fanmiot.cn" , "【zoneName】发生长时间滞留事件 - " + leaveTimeoutMinutes + "分钟, zoneLeaveDetect")
+		【leaveDevice】.sendCommand(ON)
+        ])
+	}
+end
+
+rule "normal_enterOrleave_【zoneName】"
+when
+    【outzonesensor】
+then
+	if(occupancyTimer !== null) {
+		occupancyTimer.cancel
+		occupancyTimer = null
+		logInfo("zoneLeaveDetect", "zone 【zoneName】 occupancyTimer CANCELLED BY CHANGE")
+	}
+
+	if(leaveTimer !== null) {
+		leaveTimer.cancel
+        leaveTimer = null
+		logInfo("zoneLeaveDetect", "zone 【zoneName】 leaveTimer CANCELLED BY CHANGE")
+	}
+end

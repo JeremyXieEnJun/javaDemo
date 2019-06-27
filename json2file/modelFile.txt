@@ -4,6 +4,7 @@ var hello = world
 
 var variable1 = "occupTimeoutMinutes"
 var variable1 = "leaveTimeoutMinutes"
+
 when
 	"inzonesensor"
 
