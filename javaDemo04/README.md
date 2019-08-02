@@ -13,7 +13,7 @@
 ```
 
 ## 简单Demo
-在test包里还有各种测试[demo](http://mfxuan.free.800m.net/demo.png)，各测试类的源码在src/test/java/com/httpclient/test包路径下。
+在test包里还有各种测试[demo](http://mfxuan.free.800m.net/demo.png)，各测试类的源码在src/callBack/java/com/httpclient/test包路径下。
 ```
 public static void main(String[] args) throws HttpProcessException, FileNotFoundException {
 	String url = "https://github.com/Arronlong/httpclientutil";

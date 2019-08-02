@@ -32,7 +32,7 @@ public class HttpCookies {
 		this.context.setCookieStore(cookieStore);
 	}
 	
-	public HttpClientContext getContext() {
+	public HttpContext getContext() {
 		return context;
 	}
 	

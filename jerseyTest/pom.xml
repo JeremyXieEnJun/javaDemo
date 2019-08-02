@@ -55,8 +55,13 @@
 		    <artifactId>fastjson</artifactId>
 		    <version>1.2.38</version>
 		</dependency>
-        
-    </dependencies>
+    <dependency>
+        <groupId>com.eclipsesource.jaxrs</groupId>
+        <artifactId>jersey-all</artifactId>
+        <version>2.22.2</version>
+    </dependency>
+
+</dependencies>
   <build>
     <finalName>jerseyTest</finalName>
   </build>

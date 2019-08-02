@@ -22,6 +22,7 @@
           <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
           <element id="library" level="project" name="Maven: asm:asm:3.2" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.38" />
+          <element id="library" level="project" name="Maven: com.eclipsesource.jaxrs:jersey-all:2.22.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

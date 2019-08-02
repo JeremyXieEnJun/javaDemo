@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/gsonTest/gsonTest.iml" filepath="$PROJECT_DIR$/gsonTest/gsonTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/jacksonTest/jacksonTest.iml" filepath="$PROJECT_DIR$/jacksonTest/jacksonTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaDemo01/javaDemo01.iml" filepath="$PROJECT_DIR$/javaDemo01/javaDemo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaDemo03/javaDemo03.iml" filepath="$PROJECT_DIR$/javaDemo03/javaDemo03.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaDemo04/javaDemo04.iml" filepath="$PROJECT_DIR$/javaDemo04/javaDemo04.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaDemo05/javaDemo05.iml" filepath="$PROJECT_DIR$/javaDemo05/javaDemo05.iml" />
       <module fileurl="file://$PROJECT_DIR$/jerseyTest/jerseyTest.iml" filepath="$PROJECT_DIR$/jerseyTest/jerseyTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/json2file/json2file.iml" filepath="$PROJECT_DIR$/json2file/json2file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambdaDemo/lambdaDemo.iml" filepath="$PROJECT_DIR$/lambdaDemo/lambdaDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tcp-ip/tcp-ip.iml" filepath="$PROJECT_DIR$/tcp-ip/tcp-ip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/threadDemo/threadDemo.iml" filepath="$PROJECT_DIR$/threadDemo/threadDemo.iml" />
     </modules>
   </component>
 </project>

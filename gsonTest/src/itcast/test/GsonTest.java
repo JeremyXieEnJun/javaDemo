@@ -4,6 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import itcast.domain.Person;
 import org.testng.annotations.Test;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -57,6 +63,10 @@ public class GsonTest {
         String json1 = "{\"name\":\"张三\",\"age\":23,\"gender\":\"男\",\"birthday\":1993-09-3}";
         Person p1 = gson.fromJson(json1,Person.class);
         System.out.println(p1);
+
+        //得到的对象中的日期是一个Date类型，需要转化为字符串类型，好使用
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println( simpleDateFormat.format(p1.getBirthday()));
     }
 
 
@@ -118,5 +128,39 @@ public class GsonTest {
         //预测结果：
         //{"name":"张三","age":23,"gender":"男"}
        // System.out.println(json);//{"gender":"男","name":"张三","age":23}
+    }
+
+    @Test
+    public void test5() throws Exception {
+
+        //1.创建Person对象
+        Person p  = new Person();
+        p.setName("张");
+        p.setAge(24);
+        p.setGender("男");
+        p.setBirthday(new Date());
+
+        //2.创建Gson的核心对象   gson
+        //这里使用了一个Gson自己写的一个适配器（用来规范反序列化时时间的格式）
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+        String json = gson.toJson(p);
+        System.out.println("简单Bean转化为Json===" + json);
+
+        //3.转换
+
+        //将数据写到文件中
+
+        //将json字符串写入到json文件中
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(new File(System.getProperty("user.dir") +"\\resorces\\jsonfile1\\create.json"));
+            System.out.println(System.getProperty("user.dir"));
+        } catch (IOException e) {
+           e.printStackTrace();
+        }
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(json);
+        bw.flush();
+        bw.close();
     }
 }
