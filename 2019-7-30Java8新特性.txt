@@ -1,0 +1,131 @@
+Lambda表达式：
+一、Lambda表达式的简介
+     什么是Lambda？
+  Lambda是Java8的一个新特性，说白了，Lambda就是一个匿名函数。
+     为什么要使用Lambda?
+  使用Lambda表达式可以对一个接口进行非常简洁的实现。
+     Lambda对接口的要求？
+	  虽然可以使用Lambda表达式对某些接口进行简单的实现，但是并不是所有的接口都可以用Lambda表达式来实现。要求接口中定义的必须要实现的抽象方法只能是一个。
+    在Java8对接口加了一个新的特性：default.  default和static修饰的抽象方法对接口不造成影响。
+	  注解：@FunctionalInterface: 被这个注解修饰的接口必须满足Lambda对接口的要求。
+	  
+二、Lambda表达式基础的语法
+     （见JavaDemo--LambdaDemo--exercise包内测试Demo）
+	  lambda表达式的语法由参数列表、箭头->(等价于return)和函数体组成。函数体既可以是一个表达式，也可以是一个语句块：
+      lambda表达式也会经常出现在嵌套环境中，比如说作为方法的参数。为了使lambda表达式在这些场景下尽可能简洁，我们去除了不必要的
+	分隔符。不过在某些情况下我们也可以把它分为多行，然后用括号包起来，就像其它普通表达式一样。
+	 
+	 简洁特点：
+	可选类型声明：不声明参数类型也可以，编译器可以统一识别参数值
+	可选的参数圆括号：一个参数可以不定义圆括号，但是多个参数需要定义圆括号
+	可选的大括号：如果主体包含了一个语句，可以不使用大括号
+	可选的返回（return）关键字：如果主体只有一个表达式返回值则编译器会自动返回值，如果使用了return 关键字，则需要加上大括号。
+
+	    FileFilter java = (File f) -> f.getName().endsWith("*.java");
+
+        String user = doPrivileged(() -> System.getProperty("user.name"));
+
+		new Thread(() -> {
+		  connectToService();
+		  sendNotification();
+		}).start();
+ 
+三、函数式接口   
+    （见JavaDemo--LambdaDemo--interfaces包内测试Demo）
+
+        函数式接口就是显示声明一个接口，这个接口中有且只有一个抽象方法，为了保证抽象方法的数量，java8提供了一个专用注解
+	@FunctionalInterface，当接口中声明的方法不为1个时就会报错。
+	
+四、lambda表达式与函数式接口的关系   
+    （见JavaDemo--LambdaDemo--functional和exercise包内测试Demo）
+
+    对于普通类型的接口，我们想要使用需要定义一个类来实现其中的方法，而函数式接口除了使用普通的方法来实现之外，还支持用lambda
+    表达式来实现。lambda表达式可以理解为是对函数式接口和其中抽象方法的具体实现。
+	    当有一个方法需要函数式接口作为参数时，我们就可以传递一个对应的lambda表达式作为参数，执行的时候就会自动执行函数式接口中
+	的唯一方法。 
+
+五、java8 四大核心函数式接口  
+    （见JavaDemo--LambdaDemo--LambdaDemo包内的 Demo03.java）
+
+	Java8内置的四大核心函数式接口：
+		  
+		消费型接口  Consumer<T>:         参数T   返回值void
+		             void accept(T t);
+		              --IntConsumer       int     ->  void
+		              --LongConsumer      long    ->  void
+		              --DoubleConsumer    double  ->  void
+					
+					
+		供给型接口  Supplier<T>:         参数无   返回值T
+		              T get();
+					  
+					  
+		 
+		函数型接口  Function<T, R>:       参数T   返回值R
+		              R apply(T t);
+		              --IntFunction<R>         int     ->  R
+		              --LongFunction<R>        long    ->  R
+		              --DoubleFunction<R>      double  ->  R
+					  --IntToLongFunction      int     ->  long
+					  --IntToDoubleFunction    int     ->  double
+					  --IntToLongFunction      int     ->  long 
+					  .......
+					  
+					  
+		断言型接口  Predicate<T>:         参数T   返回值boolean
+		              boolean test(T t);
+		              --IntPredicate       int     ->  boolean
+					  --LongPredicate      long    ->  boolean
+					  --DoublePredicate    double  ->  boolean
+		
+		 Java8中还提供了其他函数式接口
+		            BiFunction<T,U,R>:    参数T,U   返回值R
+					BiPredicate<T,U>:     参数T,U   返回值boolean
+					BiConsumer<T,U>:      参数T,U   返回值void
+                .......
+	
+	
+六、方法的引用
+        方法引用：
+        方法引用被用作引用一个方法而不调用它。
+		Lambda表达式允许我们定义一个匿名的方法，并将它作为FunctionalLambda表达式允许我们定义一个匿名的方法，并将它作为
+	Functional Inteface的一个实例。方法引用跟Lambda Expression很像，它们都需要一个目标类型，但是不同的方法引用不提供
+	方法的实现，它们引用一个已经存在的类或者对象的方法。
+
+七、Default Method	（默认的接口实现）
+        （见JavaDemo--LambdaDemo--defaultDemo包内的 DefaultMethods.java）
+        Java8中将会引入一个叫做默认方法的概念，早期的Java版本的接口拥有非常的严格的接口，接口包含了一些抽象方法的声明，
+	所有非抽象的实现类必须要提供所有这些抽象方法的实现，甚至是这些方法没有用或者不合适出现在一些特殊的实现类中。在即将到来
+	的Java 版本中，允许我们在接口中定义方法的默认实现。 
+	
+	     
+七、闭包
+        闭包的概念：闭包允许我们创建函数指针，并把它们作为  参数  传递，Java编程语言提供了接口的概念，接口中可以定义抽象方法，
+	接口定义了API，并希望用户或者供应商来实现这些方法，很多时候并不是为一些接口创建独立的实现类，我们通过写一个匿名的内部类
+	来写一个内联的接口实现，匿名内部类使用相当的广泛，匿名内部类最常见的场景就是事件处理器了，其次匿名内部类还被用于多线程中，
+	写匿名内部类而不是创建Runable\Callable接口的实现类。
+       一个匿名内部类就是一个内联的给定接口的实现，这个实现类的对象作为参数传递给一个方法，然后这个方法将在内部调用传递过来的
+	实现类的方法，这种接口叫做回调接口，这个方法叫做回调方法。
+	
+	
+	注意：
+ 	    闭包的定义是: 引用了自由变量的函数。
+        在之前，如果需要在匿名类的内部引用外部变量，需要将外部变量定义为 final ，现在有了 lambda 表达式，你不必再这么做了。
+    但同样需要保证外部的自由变量不能在 lambda 表达式中被改变。
+	
+	    这是什么意思呢？ 不需要定义为 final，也不能改？
+        其实理解起来很简单，Java 8 中，不需要定义为 final ，但你其实可以直接把他当作 final，不要试图修改它就行了。
+    即便你用内部类，现在也无需定义为 final 了。
+	
+	    修改自由变量是一个坏习惯
+    修改自由变量（即在lambda函数之外定义的任何对象）的Lambda函数可能会产生混淆。其他功能的副作用可能会导致不必要的错误。
+
+
+五、什么是回调接口   
+    （见JavaDemo--LambdaDemo--callack包内测试Demo）
+	注意：大多数回调接口都是Functional Interfaces，例如Runable,Callable,Comparetor等等。可以用@FunctionalInterface修饰。
+	回调函数:A类中调用B类中的某个方法methodB()，然后 methodB() 中反过来调用A类中的methodA()。methodA()这个方法就叫回调函数。
+         
+	    为什么要使用 函数式接口 以及 闭包 呢？
+	在语法上比定义回调接口、创建匿名类更加简洁；
+	尝试使用新的语言特性，理解多样化的编程思想，提升编程表达能力。
