@@ -6,4 +6,5 @@ package synchronizedDemo;
  */
 public class Demo01 {
 
+    //测试Git
 }
